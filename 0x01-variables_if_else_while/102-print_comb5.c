@@ -10,19 +10,19 @@
  */
 int main(void)
 {
-	int first_two_digit;
-	int sec_two_digit;
+	int first_num;
+	int sec_num;
 
-	for (first_two_digit = 0; first_two_digit <= 98; first_two_digit++)
+	for (first_num = 0; first_num <= 98; first_num++)
 	{
-		for (sec_two_digit = 1; sec_two_digit <= 99; sec_two_digit++)
+		for (sec_num = first_num + 1; sec_num <= 99; sec_num++)
 		{
-			putchar((first_two_digit / 10) + '0');
-			putchar((first_two_digit % 10) + '0');
+			putchar((first_num / 10) + '0');
+			putchar((first_num % 10) + '0');
 			putchar(' ');
-			putchar((sec_two_digit / 10) + '0');
-			putchar((sec_two_digit % 10) + '0');
-			if (first_two_digit != 98 || sec_two_digit != 99)
+			putchar((sec_num / 10) + '0');
+			putchar((sec_num % 10) + '0');
+			if (first_num != 98 || sec_num != 99)
 			{
 				putchar(',');
 				putchar(' ');
