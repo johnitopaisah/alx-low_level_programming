@@ -3,6 +3,7 @@
 
 /**
  * _islower - Function to check for lowercase
+ * @c: Parameter for the function
  *
  * Return: Return 1 if lowercase and 0 otherwise
  */
