@@ -14,19 +14,42 @@ int main(void)
 	{
 		value = i;
 		if (value % 3 == 0 && value % 5 == 0)
-		{
-			printf("FizzBuzz");
-			continue;
+		{	if (i != 100)
+			{
+				printf("FizzBuzz ");
+				continue;
+			}
+			else
+			{
+				printf("FizzBuzz");
+				continue;
+			}
 		}
 		else if (value % 3 == 0)
 		{
-			printf("Fizz ");
-			continue;
+			if (i != 100)
+			{
+				printf("Fizz ");
+				continue;
+			}
+			else
+			{
+				printf("Fizz");
+				continue;
+			}
 		}
 		else if (value % 5 == 0)
 		{
-			printf("Buzz ");
-			continue;
+			if (i != 100)
+			{
+				printf("Buzz ");
+				continue;
+			}
+			else
+			{
+				printf("Buzz");
+				continue;
+			}
 		}
 		else
 		{
