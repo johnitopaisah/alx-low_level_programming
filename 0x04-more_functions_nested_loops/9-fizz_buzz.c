@@ -9,9 +9,9 @@
 int main(void)
 {
 	int i, value;
-	
+
 	for (i = 1; i <= 100; i++)
-	{	
+	{
 		value = i;
 		if (value % 3 == 0 && value % 5 == 0)
 		{
