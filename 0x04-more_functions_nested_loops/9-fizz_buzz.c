@@ -8,12 +8,11 @@
  */
 int main(void)
 {
-	int i, value;
+	int i;
 
 	for (i = 1; i <= 100; i++)
 	{
-		value = i;
-		if (value % 3 == 0 && value % 5 == 0)
+		if (i % 3 == 0 && i % 5 == 0)
 		{
 			if (i != 100)
 			{
@@ -26,7 +25,7 @@ int main(void)
 				continue;
 			}
 		}
-		else if (value % 3 == 0)
+		else if (i % 3 == 0)
 		{
 			if (i != 100)
 			{
@@ -39,7 +38,7 @@ int main(void)
 				continue;
 			}
 		}
-		else if (value % 5 == 0)
+		else if (i % 5 == 0)
 		{
 			if (i != 100)
 			{
@@ -54,7 +53,7 @@ int main(void)
 		}
 		else
 		{
-			printf("%d ", value);
+			printf("%d ", i);
 		}
 	}
 	printf("\n");
