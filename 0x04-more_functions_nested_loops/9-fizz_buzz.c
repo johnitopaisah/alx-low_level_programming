@@ -14,7 +14,8 @@ int main(void)
 	{
 		value = i;
 		if (value % 3 == 0 && value % 5 == 0)
-		{	if (i != 100)
+		{	
+			if (i != 100)
 			{
 				printf("FizzBuzz ");
 				continue;
