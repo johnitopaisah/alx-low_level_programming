@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * print_sqare - Function that prints a square, followed by a new lin
+ * print_square - Function that prints a square, followed
+ * by a new lin
  * @size: Function parameter
  *
  * Return: Return nothing
