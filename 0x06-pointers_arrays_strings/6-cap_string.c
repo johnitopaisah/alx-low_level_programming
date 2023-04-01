@@ -8,15 +8,19 @@
  */
 char *cap_string(char *s)
 {
-	int index;
+	int index, i;
+	char sep[] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 
 	for (index = 0; s[index]; index++)
 	{
-		if (s[index] == ' ' || s[index] == '\t' || s[index] == '.')
+		for (i = 0; sep[i]; i++)
 		{
-			if (s[index + 1] >= 'a' && s[index] <= 'z')
+			if (s[index] == sep[i])
 			{
-				s[index + 1] = s[index + 1] - 32;
+				if (s[index + 1] >= 'a' && s[index + 1] <= 'z')
+				{
+					s[index + 1] = s[index + 1] - 32;
+				}
 			}
 		}
 	}
