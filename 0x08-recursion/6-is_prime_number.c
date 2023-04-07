@@ -10,7 +10,7 @@
  */
 int check_with_divisor(int n, int div)
 {
-	if (n / div == 0)
+	if (n % div == 0)
 	{
 		return (0);
 	}
