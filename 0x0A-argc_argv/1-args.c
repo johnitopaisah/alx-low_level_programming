@@ -6,12 +6,13 @@
  * @argv: Pointer to string
  * Return: Always 0 if successful.
  */
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
-	int i;
+	int i, j;
 	int tmp;
 	int count;
-	int digit;
+	int digit, dig;
+	int div;
 
 	digit = 0;
 	count = argc - 1;
@@ -25,19 +26,24 @@ int main(int argc, char *argv)
 	}
 
 	/*converting the number to a string*/
-	char str[digit];
 
-	for (i = digit - 1; i >= 0; i--)
+	if (count == 0)
 	{
-		str[i] = ((count % 10) + '0');
-		count /= 10;
+		_putchar('0');
+	}
+	else
+	{
+		for (i = 0; i < digit; i++)
+		{
+			for (j = 0; j < digit - i; j++)
+			{
+				div *= 10;
+			}
+			dig = (count / div) % 10;
+			_putchar(dig + '0');
+		}
 	}
 
-	/*printing the digit using _putchar*/
-	for (i = 0; i < digit; i++)
-	{
-		_putchar(i);
-	}
 	_putchar('\n');
 
 	return (0);
