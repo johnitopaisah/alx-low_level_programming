@@ -7,7 +7,7 @@
  * Return: Always 0 if successful.
  */
 int main(int argc, char *argv)
-{	
+{
 	int i;
 	int tmp;
 	int count;
@@ -15,8 +15,8 @@ int main(int argc, char *argv)
 
 	digit = 0;
 	count = argc - 1;
-	tmp = count;	
-	
+	tmp = count;
+
 	/*count the number of digits in the number */
 	while (tmp != 0)
 	{
@@ -26,6 +26,7 @@ int main(int argc, char *argv)
 
 	/*converting the number to a string*/
 	char str[digit];
+
 	for (i = digit - 1; i >= 0; i--)
 	{
 		str[i] = ((count % 10) + '0');
