@@ -34,6 +34,30 @@ int _atoi(char *s)
 
 
 /**
+ * print_number - function to print numbers using _putchar
+ * @n: the number to print
+ *
+ * Return: Nothing.
+ */
+void print_number(int n)
+{
+	if (n < 0)
+	{
+		n = -n;
+		_putchar('-');
+		print_number(n);
+	}
+	else
+	{
+		if ((n / 10) != 0)
+		{
+			print_number(n / 10);
+		}
+		_putchar((n % 10) + '0');
+	}
+}
+
+/**
  * main - function that multiplies two numbers
  * @argc: argument counter
  * @argv: pointer to argument vector
@@ -42,17 +66,24 @@ int _atoi(char *s)
  */
 int main(int argc, char *argv[])
 {
+	int i;
 	unsigned int result;
+	char message[] = "Error";
 
 	if (argc != 3)
 	{
-		printf("Error\n");
+		for (i = 0; message[i] != '\0'; i++)
+		{
+			_putchar(message[i]);
+		}
+		_putchar('\n');
 		return (1);
 	}
 	else
 	{
 		result = _atoi(argv[1]) * _atoi(argv[2]);
-		printf("%d\n", result);
+		print_number(result);
+		_putchar('\n');
 	}
 	return (0);
 }
