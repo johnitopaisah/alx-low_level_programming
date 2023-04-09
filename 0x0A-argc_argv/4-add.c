@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 			}
 			sum += _atoi(argv[i]);
 		}
-		printf("sum is: %d\n", sum);
+		printf("%d\n", sum);
 	}
 
 	return (0);
