@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 	char message[] = "Error";
 
 	if (argc == 1)
-	{	
+	{
 		_putchar('0');
 		_putchar('\n');
 	}
