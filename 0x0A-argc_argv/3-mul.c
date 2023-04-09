@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-
 
 /**
  * _atoi - function that converts string to integer
