@@ -41,7 +41,7 @@ int _atoi(char *s)
  * Return: Return 0 if successful and 1 if oterwise
  */
 int main(int argc, char *argv[])
-{	
+{
 	unsigned int result;
 
 	if (argc != 3)
