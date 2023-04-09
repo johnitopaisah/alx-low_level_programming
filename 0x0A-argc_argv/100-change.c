@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _atoi function to convert strings to integer
+ * _atoi - function to convert strings to integer
  * @s: pointer to the string to be converted
  *
  * Return: return the converted integer
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 {
 	char message[] = "Error";
 	int i, coin = 0;
-	int var = _atoi(argv[1]);
+	int var = _atoi(*argv[1]);
 
 	if (argc != 2)
 	{
@@ -77,7 +77,21 @@ int main(int argc, char *argv[])
 		_putchar('\n');
 		return (1);
 	}
-	coin = var / 2;
+	coin += var / 25;
+	var %= 25;
 
+	coin += var / 10;
+	var %= 10;
+
+	coin += var / 5;
+	var %= 5;
+
+	coin += 2;
+	var %= 2;
+
+	coin += var;
+
+	print_number(coin);
+	_putchar('\n');
 	return (0);
 }
