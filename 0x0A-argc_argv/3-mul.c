@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+
 
 /**
  * _atoi - function that converts string to integer
@@ -50,6 +52,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		result = _atoi(argv[1]) * _atoi(argv[2]);
-		return (result);
+		printf("%d\n", result);
 	}
+	return (0);
 }
