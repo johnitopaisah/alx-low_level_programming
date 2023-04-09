@@ -9,29 +9,23 @@
 int _atoi(char *s)
 {
 	int sign = 1;
-	int value = 0;
+	unsigned int num = 0;
+	int j;
 
-	/* skip any space */
-	while (*s == ' ')
+	for (j = 0; s[j] != '\0'; j++)
 	{
-		s++;
-	}
-
-	/* taking care of the nagative sigh */
-	if (*s == '-' || *s == '+')
-	{
-		if (*s == '-')
+		if (s[j] == '-')
 		{
-			sign = -1;
+			sign *= -1;
 		}
-		s++;
+		else if (s[j] >= '0' && s[j] <= '9')
+		{
+			num = (num * 10) + (s[j] - '0');
+		}
+		else if (num > 0)
+		{
+			break;
+		}
 	}
-
-	/* converting each digit in the string to an integer */
-	while (*s >= '0' && *s <= '9')
-	{
-		value = (value * 10) + (*s - '0');
-		s++;
-	}
-	return (value * sign);
+	return (num * sign);
 }
