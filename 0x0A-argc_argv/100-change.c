@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * _atoi - function to convert strings to integer
@@ -66,7 +68,7 @@ int main(int argc, char *argv[])
 {
 	char message[] = "Error";
 	int i, coin = 0;
-	int var = _atoi(*argv[1]);
+	int var = atoi(argv[1]);
 
 	if (argc != 2)
 	{
@@ -77,6 +79,13 @@ int main(int argc, char *argv[])
 		_putchar('\n');
 		return (1);
 	}
+	if (var < 0)
+	{
+		_putchar('0');
+		_putchar('-');
+		return (0);
+	}
+
 	coin += var / 25;
 	var %= 25;
 
