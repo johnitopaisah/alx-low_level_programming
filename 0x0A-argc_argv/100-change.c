@@ -77,31 +77,31 @@ int main(int argc, char *argv[])
 		_putchar('\n');
 		return (1);
 	}
-	var = _atoi(argv[1]);
-	if (var < 0)
-	{
-		_putchar('0');
-		_putchar('-');
-		return (0);
-	}
 	else
 	{
-		coin += var / 25;
-		var %= 25;
+		var = _atoi(argv[1]);
+		if (var < 0)
+		{
+			_putchar('0');
+			_putchar('-');
+			return (0);
+		}
+		else
+			{
+			coin += var / 25;
+			var %= 25;
+			coin += var / 10;
+			var %= 10;
+			coin += var / 5;
+			var %= 5;
+			coin += var / 2;
+			var %= 2;
 
-		coin += var / 10;
-		var %= 10;
+			coin += var;
 
-		coin += var / 5;
-		var %= 5;
-
-		coin += var / 2;
-		var %= 2;
-
-		coin += var;
-
-		print_number(coin);
-		_putchar('\n');
+			print_number(coin);
+			_putchar('\n');
+			}
 	}
 	return (0);
 }
