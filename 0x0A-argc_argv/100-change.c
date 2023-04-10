@@ -18,7 +18,7 @@ int _atoi(char *s)
 	{
 		if (s[i] == '-')
 		{
-			sign *= -1;
+			sign = -1;
 		}
 		else if (s[i] >= '0' && s[i] <= '9')
 		{
@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 {
 	char message[] = "Error";
 	int i, coin = 0;
-	int var = atoi(argv[1]);
+	int var;
 
 	if (argc != 2)
 	{
@@ -79,28 +79,31 @@ int main(int argc, char *argv[])
 		_putchar('\n');
 		return (1);
 	}
+	var = atoi(argv[1]);
 	if (var < 0)
 	{
 		_putchar('0');
 		_putchar('-');
 		return (0);
 	}
+	else
+	{
+		coin += var / 25;
+		var %= 25;
 
-	coin += var / 25;
-	var %= 25;
+		coin += var / 10;
+		var %= 10;
 
-	coin += var / 10;
-	var %= 10;
+		coin += var / 5;
+		var %= 5;
 
-	coin += var / 5;
-	var %= 5;
+		coin += var / 2;
+		var %= 2;
 
-	coin += 2;
-	var %= 2;
+		coin += var;
 
-	coin += var;
-
-	print_number(coin);
-	_putchar('\n');
+		print_number(coin);
+		_putchar('\n');
+	}
 	return (0);
 }
