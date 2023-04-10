@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * _atoi - function to convert strings to integer
@@ -22,7 +20,7 @@ int _atoi(char *s)
 		}
 		else if (s[i] >= '0' && s[i] <= '9')
 		{
-			num = ((num * 10) + (s[i] + '0'));
+			num = ((num * 10) + (s[i] - '0'));
 		}
 		else if (num > 0)
 		{
@@ -79,7 +77,7 @@ int main(int argc, char *argv[])
 		_putchar('\n');
 		return (1);
 	}
-	var = atoi(argv[1]);
+	var = _atoi(argv[1]);
 	if (var < 0)
 	{
 		_putchar('0');
