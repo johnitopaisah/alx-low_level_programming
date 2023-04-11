@@ -33,5 +33,6 @@ int main(int ac, char **av)
 		i++;
 	}
 	print_int_array(a, asize);
+	free(a);
 	return (0);
 }
