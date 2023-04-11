@@ -8,9 +8,9 @@
  *
  * Return: return character
  */
-char *create_array(unsigned int, char c)
+char *create_array(unsigned int size, char c)
 {
-	int i;
+	unsigned int i;
 	char *ar = NULL;
 
 	if (size == 0)
