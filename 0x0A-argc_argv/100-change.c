@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
 		if (var < 0)
 		{
 			_putchar('0');
-			_putchar('-');
+			_putchar('\n');
 			return (0);
 		}
 		else
