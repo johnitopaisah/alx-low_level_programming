@@ -28,7 +28,6 @@ char *_strdup(char *str)
 		{
 			s[i] = str[i];
 		}
-		printf("\n");
 		return (s);
 	}
 }
