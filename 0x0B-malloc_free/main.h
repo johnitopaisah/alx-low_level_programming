@@ -2,5 +2,6 @@
 #define MAIN_H
 
 char *create_array(unsigned int size, char);
+char *_strdup(char *str);
 
 #endif
