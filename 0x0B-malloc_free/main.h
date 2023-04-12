@@ -3,5 +3,6 @@
 
 char *create_array(unsigned int size, char);
 char *_strdup(char *str);
+char *str_concat(char *s1, char *s1);
 
 #endif
