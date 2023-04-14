@@ -12,7 +12,7 @@ int main(int ac, char *av[])
 	char *s;
 
 	s = argstostr(ac, av);
-	if a == (NULL)
+	if (s == NULL)
 	{
 		return (1);
 	}
