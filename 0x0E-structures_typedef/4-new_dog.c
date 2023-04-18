@@ -13,42 +13,27 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dog;
-	int name_len, owner_len;
+	/* Get lengths of name and owner strings */
+	int name_len = strlen(name);
+	int owner_len = strlen(owner);
 
-	new_dog = malloc(sizeof(dog_t));
+	/* Allocate memry for new dog and its strings in a single call to malloc */
+	dog_t *new_dog = malloc(sizeof(dog_t) + (name_len + 1) + (owner_len + 1));
 	if (new_dog == NULL)
 	{
 		return (NULL);
 	}
+	
+	/* Set pointes to name and owner stings in the new dog */
+	new_dog->name = (char *)new_dog + sizeof(dog_t);
+	new_dog->owner = new_dog->name + (name_len + 1);
 
-	name_len = strlen(name);
-	owner_len = strlen(owner);
+	/* Copy name and owner strings to the new dog */
+	strcpy(new_dog->name, name);
+	strcpy(new_dog->owner, owner);
 
-	new_dog->name = malloc((name_len) * sizeof(char));
-	new_dog->owner = malloc((owner_len) * sizeof(char));
-
-	if (new_dog->name == NULL)
-	{
-		free(new_dog->name);
-		free(new_dog->owner);
-		free(new_dog);
-		return (NULL);
-	}
-	if (new_dog->owner == NULL)
-	{
-		free(new_dog->name);
-		free(new_dog->owner);
-		free(new_dog);
-		return (NULL);
-	}
-
-	strncpy(new_dog->name, name, name_len);
-	strncpy(new_dog->owner, owner, owner_len);
+	/* Set age member of the new dog */
 	new_dog->age = age;
-
-	new_dog->name[name_len] = '\0';
-	new_dog->owner[owner_len] = '\0';
 
 	return (new_dog);
 }
