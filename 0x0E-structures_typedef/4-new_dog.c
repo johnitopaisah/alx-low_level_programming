@@ -16,21 +16,31 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/* Get lengths of name and owner strings */
 	int name_len = strlen(name);
 	int owner_len = strlen(owner);
+	dog_t *new_dog;
 
-	/* Allocate memry for new dog and its strings in a single call to malloc */
-	dog_t *new_dog = malloc(sizeof(dog_t) + (name_len + 1) + (owner_len + 1));
+	if (name == NULL || age < 0 || owner == NULL)
+	{
+		return (NULL);
+	}
 
+	new_dog = malloc(sizeof(dog_t));
 	if (new_dog == NULL)
 	{
 		return (NULL);
 	}
 
-	/* Set pointes to name and owner stings in the new dog */
-	new_dog->name = (char *)new_dog + sizeof(dog_t);
-	new_dog->owner = new_dog->name + (name_len + 1);
-
-	if (new_dog->name == NULL || new_dog->owner == NULL)
+	new_dog->name = malloc(sizeof(char) * (name_len + 1));
+	if (new_dog->name == NULL)
 	{
+		free(new_dog);
+		return (NULL);
+	}
+
+	new_dog->owner = malloc(sizeof(char) * (owner_len + 1));
+	if (new_dog->owner == NULL)
+	{
+		free(new_dog->name);
+		free(new_dog);
 		return (NULL);
 	}
 
