@@ -19,11 +19,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	/* Allocate memry for new dog and its strings in a single call to malloc */
 	dog_t *new_dog = malloc(sizeof(dog_t) + (name_len + 1) + (owner_len + 1));
+
 	if (new_dog == NULL)
 	{
 		return (NULL);
 	}
-	
+
 	/* Set pointes to name and owner stings in the new dog */
 	new_dog->name = (char *)new_dog + sizeof(dog_t);
 	new_dog->owner = new_dog->name + (name_len + 1);
