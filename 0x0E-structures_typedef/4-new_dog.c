@@ -29,6 +29,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_dog->name = (char *)new_dog + sizeof(dog_t);
 	new_dog->owner = new_dog->name + (name_len + 1);
 
+	if (new_dog->name == NULL || new_dog->owner == NULL)
+	{
+		return (NULL);
+	}
+
 	/* Copy name and owner strings to the new dog */
 	strcpy(new_dog->name, name);
 	strcpy(new_dog->owner, owner);
