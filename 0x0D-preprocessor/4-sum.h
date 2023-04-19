@@ -4,7 +4,9 @@
 /**
  * File: 4-sum.h
  * Desc: function-like macro SUM(x, y) that computes
- * the sum of the numbers x and y.
+ * the value of x and y
+ * @x: first value to be added
+ * @y: second value to be added
  *
  */
 
