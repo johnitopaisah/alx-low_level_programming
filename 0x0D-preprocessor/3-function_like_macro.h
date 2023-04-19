@@ -4,6 +4,7 @@
 /**
  * File: 3-function_like_macro_h
  * Desc: function_like macro that computes the absolute value of x
+ * @x: the value to check
  *
  */
 
