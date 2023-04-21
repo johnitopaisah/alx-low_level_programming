@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * main - check the code
+ * man - check the code
  *
  * Return: Always 0
  */
-int main(void)
+int man(void)
 {
 	int r;
 
