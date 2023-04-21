@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "variadic_function.h"
 #include <stdarg.h>
 
@@ -12,7 +11,7 @@
 int sum_them_all(const unsigned int n, ...)
 {
 	va_list mynum;
-	int i, add = 0;
+	unsigned int i, add = 0;
 
 	va_start(mynum, n);
 	if (n == 0)
@@ -25,7 +24,6 @@ int sum_them_all(const unsigned int n, ...)
 		{
 			add += va_arg(mynum, int);
 		}
-		putchar('\n');
 		va_end(mynum);
 		return (add);
 	}
