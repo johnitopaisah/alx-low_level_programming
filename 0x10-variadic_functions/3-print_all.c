@@ -43,7 +43,7 @@ void print_all(const char * const format, ...)
 				separator = 0;
 				break;
 		}
-		if (format[i + 1] && separator)
+		if (format[i] && separator)
 			printf(", ");
 		i++;
 	}
