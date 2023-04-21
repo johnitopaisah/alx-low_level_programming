@@ -14,7 +14,6 @@ void print_all(const char * const format, ...)
 	va_list anything;
 	unsigned int i = 0;
 	char *string;
-	char separator = ',';
 
 	va_start(anything, format);
 
@@ -40,10 +39,9 @@ void print_all(const char * const format, ...)
 				printf("%s", string);
 				break;
 			default:
-				separator = 0;
 				break;
 		}
-		if (format[i] && separator)
+		if (format[i + 1] && (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's'))
 			printf(", ");
 		i++;
 	}
