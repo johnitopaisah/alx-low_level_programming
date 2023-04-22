@@ -2,5 +2,6 @@
 #define FUNCTION_POINTERS_H
 
 void print_name(char *name, void (*f)(char *));
+terator(int *array, size_t size, void (*action)(int));
 
-#endif /* FUNCTION_POINTER_H */
+aendif /* FUNCTION_POINTER_H */
