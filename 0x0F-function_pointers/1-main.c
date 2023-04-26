@@ -19,7 +19,7 @@ void print_elem(int elem)
  */
 void print_elem_hex(int elem)
 {
-	printf("%d\n", elem);
+	printf("0x%x\n", elem);
 }
 
 /**
@@ -32,6 +32,6 @@ int main(void)
 	int array[5] = {0, 98, 402, 1024, 4096};
 
 	array_iterator(array, 5, &print_elem);
-	array_eterator(array, 5, &print_elem_hex);
+	array_iterator(array, 5, &print_elem_hex);
 	return (0);
 }
