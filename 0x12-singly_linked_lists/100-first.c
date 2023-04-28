@@ -1,5 +1,5 @@
 /**
- * befor_main - function that prints a message before the main function
+ * before_main - function that prints a message before the main function
  *
  * Return: Nothing
  */
