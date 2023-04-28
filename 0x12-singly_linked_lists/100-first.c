@@ -1,3 +1,8 @@
+/**
+ * befor_main - function that prints a message before the main function
+ *
+ * Return: Nothing
+ */
 #include <stdio.h>
 
 void __attribute__((constructor)) before_main()
