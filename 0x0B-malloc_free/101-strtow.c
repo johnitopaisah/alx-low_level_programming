@@ -2,6 +2,26 @@
 #include <stdlib.h>
 
 /**
+ * word_leng - function to locate the index marking the end
+ * of the first word containing withing= a string.
+ * @strg: The string.
+ *
+ * Return: Return the index of end of the word pointed to
+ */
+int word_leng(char *strg)
+{
+	int index = 0, leng = 0;
+
+	while (strg[index] && strg[index] != ' ')
+	{
+		leng++;
+		index++;
+	}
+	return (leng);
+}
+
+
+/**
  * word_count - function to coun the number of words in the string
  * @strg: string to be counted
  *
@@ -10,14 +30,22 @@
 int word_count(char *strg)
 {
 	int count = 0;
-	int i;
+	int leng = 0;
+	int index;
 
-	for (i = 0; strg[i] != '\0'; ++i)
+	for (index = 0; strg[index]; index++)
+		leng++;
+
+	for (index = 0; index < leng; index++)
 	{
-		if (strg[i] != ' ' && (strg[i + 1] != ' ' || strg[i + 1] == '\0'))
+		if (strg[index] != ' ')
+		{
 			count++;
+			index += word_leng(strg + index);
+		}
 	}
 	return (count);
+
 }
 
 
@@ -29,45 +57,40 @@ int word_count(char *strg)
  */
 char **strtow(char *strg)
 {
-	char **words;
-	int i, j = 0, k;
-	int c_words = 0, word_leng = 0;
+	char **strings;
+	int index = 0;
+	int words, w, letters, l;
 
-	if (strg == NULL || strg[0] == '\0')
+	words = word_count(strg);
+	if (words == 0)
 		return (NULL);
 
-	c_words = word_count(strg);
-
-	words = malloc(sizeof(char *) * (c_words + 1));
-	if (words == NULL)
-	{
+	strings = malloc(sizeof(char *) * words + 1);
+	if (strings == NULL)
 		return (NULL);
-	}
 
-	for (i = 0; strg[i] != '\0'; ++i)
+	for (w = 0; w < words; w++)
 	{
-		if (strg[i] != ' ')
-			word_leng++;
+		while (strg[index] == ' ')
+			index++;
 
-		if ((strg[i] == ' ' && word_leng > 0) || (strg[i + 1] == '\0' && word_leng > 0))
+		letters = word_leng(strg + index);
+
+		strings[w] = malloc(sizeof(char) * (letters + 1));
+		if (strings[w] == NULL)
 		{
-			words[j] = malloc((word_leng + 1) * sizeof(char));
-			if (words[j] == NULL)
-			{
-				for (k = j - 1; k >= 0; k--)
-					free(words[k]);
+			for (; w >= 0; w--)
+				free(strings[w]);
 
-				free(words);
-				return (NULL);
-			}
-
-			for (k = 0; k < word_leng; ++k)
-				words[j][k] = strg[(i - word_leng) + k + 1];
-			words[j][k] = '\0';
-			word_leng = 0;
-			j++;
+			free(strings);
+			return (NULL);
 		}
+
+		for (l = 0; l < letters; l++)
+			strings[w][l] = strg[index++];
+		strings[w][l] = '\0';
 	}
-	words[j] =  NULL;
-	return (words);
+	strings[w] = NULL;
+
+	return (strings);
 }
