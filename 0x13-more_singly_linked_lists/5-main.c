@@ -22,6 +22,6 @@ int main(void)
 	add_nodeint_end(&head, 402);
 	add_nodeint_end(&head, 1024);
 	print_listint(head);
-	free_listint22(head);
+	free_listint2(&head);
 	return (0);
 }
