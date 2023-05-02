@@ -8,7 +8,7 @@
  *
  * Description: singly linked node structure
  */
-typedef struct linkint_s
+typedef struct listint_s
 {
 	int n;
 	struct listint_s *next;
