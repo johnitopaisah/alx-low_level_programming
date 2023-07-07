@@ -19,5 +19,5 @@ int main(void)
 	printf("%u\n", n);
 	n = binary_to_uint("0000000000000000000110010010");
 	printf("%u\n", n);
-	retun (0);
+	return (0);
 }
