@@ -13,7 +13,7 @@ unsigned int binary_to_uint(const char *b)
 
 	if (b[indx] == '\0')
 		return (0);
-/**
+
 	for (indx = 0; b[indx] != '\0'; indx++)
 	{
 		if (b[indx] != '0' && b[indx] != '1')
@@ -21,7 +21,7 @@ unsigned int binary_to_uint(const char *b)
 	}
 
 	indx = 0;
-*/
+
 	while (b[indx] == '0' || b[indx] == '1')
 	{
 		converted_num <<= 1;
