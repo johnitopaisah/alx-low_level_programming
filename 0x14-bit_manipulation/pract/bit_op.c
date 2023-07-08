@@ -18,5 +18,7 @@ int main(void)
 	printf("%d\n", (a ^ b));
 	printf("%d\n", (a & b && b + 1 || 0 && b++));
 	printf("b= %d, c= %d, d= %d\n", b, c, d);
+	printf("a= %d, b= %d\n", a, b);
+	printf("a= %d, b= %d\n", (a ^= b), (b ^= a));
 	return (0);
 }
