@@ -12,7 +12,7 @@ int main(void)
 	int c, d;
 
 	c = a << 4;
-	d = a >> 2;
+	d = a >> 1;
 	printf("%d\n", (a & b));
 	printf("%d\n", (a | b));
 	printf("%d\n", (a ^ b));
