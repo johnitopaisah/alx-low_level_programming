@@ -39,7 +39,7 @@ void print_data(unsigned char *e_ident)
 			break;
 		case ELFDATA2LSB:
 			printf("2's complement, little endian\n");
-			breadk;
+			break;
 		case ELFDATA2MSB:
 			printf("2's complement, big endian\n");
 			break;
@@ -87,7 +87,7 @@ void print_osabi(unsigned char *e_ident)
 		case ELFOSABI_NETBSD:
 			printf("UNIX - NetBSD\n");
 			break;
-		case ELFOSABI_Linux:
+		case ELFOSABI_LINUX:
 			printf("UNIX - Linux\n");
 			break;
 		case ELFOSABI_SOLARIS:
@@ -118,7 +118,7 @@ void print_osabi(unsigned char *e_ident)
  * @e_entry: The address of the ELF entry point.
  * @e_ident: pointer to an array contaning the ELF class
  */
-void print_entry(unsigned int e_entry, unsigned char *e_ident)
+void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
 	printf(" Entry point address:             ");
 
@@ -131,5 +131,5 @@ void print_entry(unsigned int e_entry, unsigned char *e_ident)
 	if (e_ident[EI_CLASS] == ELFCLASS32)
 		printf("%#x\n", (unsigned int)e_entry);
 	else
-		printf("%#x\n", e_entry);
+		printf("%#x\n", (unsigned int)e_entry);
 }

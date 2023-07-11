@@ -1,4 +1,4 @@
-#iniclude "main.h"
+#include "main.h"
 
 /**
  * check_elf - function that checks if a file is an ELF file
@@ -32,7 +32,7 @@ void print_magic(unsigned char *e_ident)
 {
 	int index;
 
-	pirntf(" Magic:   ");
+	printf(" Magic:   ");
 
 	for (index = 0; index < EI_NIDENT; index++)
 	{
