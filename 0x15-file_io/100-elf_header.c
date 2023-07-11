@@ -1,52 +1,6 @@
 #include "main.h"
 
 /**
- * check_elf - function that checks if a file is an ELF file
- * @e_ident: pointer to an array containing the ELF magic numbers.
- *
- * Description: If the file is not an ELF file - exit code 98/
- */
-void check_elf(unsigned char *e_ident)
-{
-	int index;
-
-	for (index = 0; index < 4; index++)
-	{
-		if (e_ident[index] != 127 &&
-			e_ident[index] != 'E' &&
-			e_ident[index] != 'L' &&
-			e_ident[index] != 'F')
-		{
-			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
-			exit(98);
-		}
-	}
-}
-
-/**
- * print_magic - Function that prints the magic numbers of an ELF header
- * @e_ident: A pointer to an array containing the ELF magic numbers.
- *
- * Description: Magic numbers are seperated by spaces.
- */
-void print_magic(unsigned char *e_ident)
-{
-	int index;
-
-	pirntf(" Magic:   ");
-
-	for (index = 0; index < EI_NIDENT; index++)
-	{
-		printf("%02x", e_ident[index]);
-
-		if (index == EI_NIDENT - 1)
-			printf("\n");
-		else
-			printf(" ");
-	}
-}
-
-/**
  * print_class - Function that prints the class of an ELF header.
  * @e_ident: pointer to an array containing the ELF class
  */
@@ -111,5 +65,50 @@ void print_version(unsigned char *e_ident)
 		default:
 			printf("\n");
 			break;
+	}
+}
+
+/**
+ * print_osabi - Function that prints the OS/ABI of an ELF header.
+ * @e_ident: pointer to an array containing the ELF version
+ */
+void print_osabi(unsigned char *e_ident)
+{
+	printf(" OS/ABI:                         ");
+
+	switch (e_ident[EI_OSABI])
+	{
+		case ELFOSABI_NONE:
+			printf("UNIX - System V\n");
+			break;
+		case ELFOSABI_HPUX:
+			printf("UNIX - HP-UX\n");
+			break;
+		case ELFOSABI_NETBSD:
+			printf("UNIX - NetBSD\n");
+			break;
+		case ELFOSABI_Linux:
+			printf("UNIX - Linux\n");
+			break;
+		case ELFOSABI_SOLARIS:
+			printf("UNIX - Solaris\n");
+			break;
+		case ELFOSABI_IRIX:
+			printf("UNIX - IRIX\n");
+			break;
+		case ELFOSABI_FREEBSD:
+			printf("UNIX - FreeBSD\n");
+			break;
+		case ELFOSABI_TRU64:
+			printf("UNIX - TRU64\n");
+			break;
+		case ELFOSABI_ARM:
+			printf("ARM\n");
+			break;
+		case ELFOSABI_STANDALONE:
+			printf("Standalone App\n");
+			break;
+		default:
+			printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 	}
 }
