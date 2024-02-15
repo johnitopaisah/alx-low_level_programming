@@ -7,9 +7,9 @@
  */
 int main(void)
 {
-	hast_table_t *ht;
+	hash_table_t *ht;
 
-	ht = hast_table_create(1024);
+	ht = hash_table_create(1024);
 	hash_table_set(ht, "betty", "holberton");
 	return (EXIT_SUCCESS);
 }
