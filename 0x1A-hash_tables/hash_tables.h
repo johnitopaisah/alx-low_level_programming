@@ -24,7 +24,7 @@ typedef struct hash_node_s
 * @size: The size of trhe array
 * @array: An array of size at the size
 */
-typedef struc hash_table_s
+typedef struct hash_table_s
 {
 	unsigned long int size;
 	hash_node_t **array;
@@ -32,3 +32,6 @@ typedef struc hash_table_s
 
 
 hash_table_t *hash_table_create(unsigned long int size);
+
+
+#endif /* HASH_TABLES_H */
