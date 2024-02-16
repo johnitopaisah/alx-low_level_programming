@@ -21,3 +21,4 @@ int main(void)
 	hash_table_print(ht);
 	return (EXIT_SUCCESS);
 }
+
