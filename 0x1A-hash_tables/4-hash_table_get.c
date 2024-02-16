@@ -1,4 +1,4 @@
-#include "hash_tables.h"
+include "hash_tables.h"
 
 /**
  * hash_table_get - Retrieve the value associated with
@@ -26,4 +26,4 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		node = node->next;
 
 	return ((node == NULL) ? NULL : node->value);
-
+}
